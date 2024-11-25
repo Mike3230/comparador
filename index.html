@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html title="Comparador">
+<head>
+    <style>
+        table{
+            text-align: center;
+            height: 20vb;
+            background-color: lightgray;
+        }
+        body{
+            background-color: aliceblue;
+        }
+        ::placeholder{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <br>
+        <br>
+        <br>
+    <table border="">
+        <tr>
+            <td rowspan="2" style="width: 50%;" >
+                <table>
+                <tr>
+                    <td><input type="number" id="número1" placeholder="digite um número"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="número2" placeholder="digite um número"></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="número3" placeholder="digite um número"></td>
+                </tr>
+                <tr>
+                    <td><button onclick="números()">Enviar</button></td>
+                </tr>
+                <script>
+                    function números(){
+                        var x = document.getElementById("número1").value
+                        var y = document.getElementById("número2").value
+                        var z = document.getElementById("número3").value
+
+                        if( x >= y && x >= z && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("pabua").innerHTML = "O maior nº dos 3 é o " + x
+                        }
+                        if( y >= x && y >= z && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("pabua").innerHTML = "O maior nº dos 3 é o " + y
+                        }
+                        if( z >= y && z >= x && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("pabua").innerHTML = "O maior nº dos 3 é o " + z
+                        }
+
+
+                        if( x <= y && x <= z && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("luis").innerHTML = "O menor nº dos 3 é o " + x
+                        }
+                        if( y <= x && y <= z && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("luis").innerHTML = "O menor nº dos 3 é o " + y
+                        }
+                        if( z <= y && z <= x && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("luis").innerHTML = "O menor nº dos 3 é o " + z
+                        }
+
+
+                        if( x == y && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("tadeu").innerHTML = "O nº repetido é o " + y
+                        }
+                        if( x == z && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("tadeu").innerHTML = "O nº repetido é o " + x
+                        }
+                        if( z == y && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("tadeu").innerHTML = "O nº repetido é o " + z
+                        }
+                        if( x !== y && x !== z && z !== y && x !== "" && y !== "" && z !== ""){
+                            document.getElementById("tadeu").innerHTML = "Não ha nenhum numero repetido"
+                        }
+
+                        if( x == ""){
+                            document.getElementById("tadeu").innerHTML = "Por favor digite algo"
+                            document.getElementById("luis").innerHTML = "Por favor digite algo"
+                            document.getElementById("pabua").innerHTML = "Por favor digite algo"
+                        }
+                        if( y == ""){
+                            document.getElementById("tadeu").innerHTML = "Por favor digite algo"
+                            document.getElementById("luis").innerHTML = "Por favor digite algo"
+                            document.getElementById("pabua").innerHTML = "Por favor digite algo"
+                        }
+                        if( z == ""){
+                            document.getElementById("tadeu").innerHTML = "Por favor digite algo"
+                            document.getElementById("luis").innerHTML = "Por favor digite algo"
+                            document.getElementById("pabua").innerHTML = "Por favor digite algo"
+                        }
+                    }
+                
+                </script>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <td>
+                        <tr id="pabua">
+                        </tr>
+                        <tr id="luis">
+                        </tr>
+                        <tr id="tadeu"></tr>
+                    </td>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </center>
+</body>
+</html>
